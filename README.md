@@ -2,6 +2,7 @@
 
 
 Centos安装docker和minima一键脚本
+
 wget https://raw.githubusercontent.com/ampetervip/dminima/main/m_vip.sh && chmod +x install-docker.sh && ./install-docker.sh
 
 
