@@ -1,4 +1,17 @@
 # dminima
+======================================================================
+填加minima用户
+sudo adduser minima
+
+向最小用户授予 sudo（管理员）权限：
+sudo usermod -aG sudo minima
+
+将最小用户添加到 Docker 组：
+sudo usermod -aG docker $USER
+
+切换到最小用户：
+su  minima
+
 
 有用的 Docker 命令
 以下命令可以从服务器命令行运行，以最小用户身份登录。
