@@ -1,5 +1,5 @@
 #!/bin/bash
-# ÒÆ³ıµô¾ÉµÄ°æ±¾
+# ç§»é™¤æ‰æ—§çš„ç‰ˆæœ¬
 sudo yum remove docker \
                   docker-client \
                   docker-client-latest \
@@ -11,20 +11,20 @@ sudo yum remove docker \
                   docker-engine-selinux \
                   docker-engine
  
-# É¾³ıËùÓĞ¾ÉµÄÊı¾İ
+# åˆ é™¤æ‰€æœ‰æ—§çš„æ•°æ®
 sudo rm -rf /var/lib/docker
-# ÏÈ¸üĞÂ
+# å…ˆæ›´æ–°
 sudo yum update
-# Ìí¼ÓÔ´£¬Ê¹ÓÃÁË°¢ÀïÔÆ¾µÏñ
+# æ·»åŠ æºï¼Œä½¿ç”¨äº†é˜¿é‡Œäº‘é•œåƒ
 sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-#  °²×°ÒÀÀµ°ü
+#  å®‰è£…ä¾èµ–åŒ…
 sudo yum install -y yum-utils device-mapper-persistent-data lvm2
-# ÅäÖÃ»º´æ
+# é…ç½®ç¼“å­˜
 sudo yum makecache fast
-# °²×°×îĞÂÎÈ¶¨°æ±¾µÄdocker
+# å®‰è£…æœ€æ–°ç¨³å®šç‰ˆæœ¬çš„docker
 sudo yum install docker-ce
  
-# ÅäÖÃ¾µÏñ¼ÓËÙÆ÷
+# é…ç½®é•œåƒåŠ é€Ÿå™¨
 sudo mkdir -p /etc/docker
 sudo tee /etc/docker/daemon.json <<-'EOF'
 {
@@ -32,11 +32,11 @@ sudo tee /etc/docker/daemon.json <<-'EOF'
 }
 EOF
  
-# Æô¶¯dockerÒıÇæ²¢ÉèÖÃ¿ª»úÆô¶¯
+# å¯åŠ¨dockerå¼•æ“å¹¶è®¾ç½®å¼€æœºå¯åŠ¨
 sudo systemctl start docker
 sudo systemctl enable docker
  
-# ÅäÖÃµ±Ç°ÓÃ»§¶ÔdockerµÄÖ´ĞĞÈ¨ÏŞ
+# é…ç½®å½“å‰ç”¨æˆ·å¯¹dockerçš„æ‰§è¡Œæƒé™
 sudo groupadd docker
 sudo gpasswd -a ${USER} docker
 sudo systemctl restart docker
