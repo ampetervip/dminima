@@ -40,4 +40,11 @@ su  minima
 
 删除列出的容器：docker rm minima9001 minima8001 minima7001
 
-帮助：docker --help
+停止然后删除 minima9001 容器
+docker stop minima9001
+docker rm minima9001
+
+通过运行从主目录中删除 minimadocker9001 文件夹
+sudo rm -rf minimadocker9001
+
+
